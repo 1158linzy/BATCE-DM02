@@ -1,0 +1,9 @@
+{
+  "root_path": "/home/lzy/sam_share/W800_curtain/exp_fu/Hi3861V100R001C00SPC030_HOS",
+  "board": "hi3861",
+  "kernel": "liteos_m",
+  "product": "hi3861",
+  "product_path": "/home/lzy/sam_share/W800_curtain/exp_fu/Hi3861V100R001C00SPC030_HOS/vendor/hisilicon/hi3861",
+  "device_path": "/home/lzy/sam_share/W800_curtain/exp_fu/Hi3861V100R001C00SPC030_HOS/device/hisilicon/hi3861/sdk_liteos",
+  "patch_cache": null
+}

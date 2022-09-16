@@ -1,0 +1,74 @@
+From 6a1ed00ae61d894d0bc5098f280613b7612adb0e Mon Sep 17 00:00:00 2001
+From: d00452553 <dingchenchen@huawei.com>
+Date: Thu, 10 Jun 2021 19:19:22 +0000
+Subject: [PATCH] Description:add hi3861 hb build settings
+
+TicketNo:OR0001ODP1
+Issue:
+Team: HISI_SWP_System
+Feature or Bugfix:Bugfix
+Test Result:PASS
+Related Commit:No
+Controlled Dir:No
+PrivateCode(Yes/No):No
+Release Verify:None
+Binary Source:None
+AR/Design/TestCase Update:None
+---
+ build/lite/components/vendor.json          | 14 +++++++-------
+ build/lite/config/component/cJSON/BUILD.gn |  2 +-
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/build/lite/components/vendor.json b/build/lite/components/vendor.json
+index 77236d2cb..e74b088e8 100755
+--- a/build/lite/components/vendor.json
++++ b/build/lite/components/vendor.json
+@@ -229,10 +229,10 @@
+       "description": "",
+       "optional": "false",
+       "dirs": [
+-        "device/hisilicon/hispark_pegasus/sdk_liteos"
++        "device/hisilicon/hi3861/sdk_liteos"
+       ],
+       "targets": [
+-        "//device/hisilicon/hispark_pegasus/sdk_liteos:wifiiot_sdk"
++        "//device/hisilicon/hi3861/sdk_liteos:wifiiot_sdk"
+       ],
+       "rom": "",
+       "ram": "",
+@@ -285,14 +285,14 @@
+       "description": "",
+       "optional": "false",
+       "dirs": [
+-        "device/hisilicon/hispark_pegasus/hi3861_adapter/hals/utils/file",
++        "device/hisilicon/hi3861/hi3861_adapter/hals/utils/file",
+         "utils/native/lite/hals/file",
+-        "device/hisilicon/hispark_pegasus/hi3861_adapter/hals/iot_hardware/wifiiot_lite",
++        "device/hisilicon/hi3861/hi3861_adapter/hals/iot_hardware/wifiiot_lite",
+         "base/update/ota_lite/hals",
+-        "device/hisilicon/hispark_pegasus/hi3861_adapter/hals/update",
+-        "device/hisilicon/hispark_pegasus/hi3861_adapter/hals/communication/wifi_lite/wifiaware",
++        "device/hisilicon/hi3861/hi3861_adapter/hals/update",
++        "device/hisilicon/hi3861/hi3861_adapter/hals/communication/wifi_lite/wifiaware",
+         "foundation/communication/wifi_lite/interfaces/wifiservice",
+-        "device/hisilicon/hispark_pegasus/hi3861_adapter/hals/communication/wifi_lite/wifiservice"
++        "device/hisilicon/hi3861/hi3861_adapter/hals/communication/wifi_lite/wifiservice"
+       ],
+       "targets": [],
+       "rom": "",
+diff --git a/build/lite/config/component/cJSON/BUILD.gn b/build/lite/config/component/cJSON/BUILD.gn
+index e0f8e6c76..42c24f1c6 100755
+--- a/build/lite/config/component/cJSON/BUILD.gn
++++ b/build/lite/config/component/cJSON/BUILD.gn
+@@ -39,7 +39,7 @@ lite_library("cjson_shared") {
+ }
+ 
+ ndk_lib("cjson_ndk") {
+-  if (board_name != "hispark_pegasus") {
++  if (board_name != "hi3861") {
+     lib_extension = ".so"
+     deps = [ ":cjson_shared" ]
+   } else {
+-- 
+2.22.0
+

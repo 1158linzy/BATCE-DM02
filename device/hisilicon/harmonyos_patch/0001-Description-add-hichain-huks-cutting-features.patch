@@ -1,0 +1,37 @@
+From fea8d66e49827f3f070d798b3ef198144c0f0a07 Mon Sep 17 00:00:00 2001
+From: d00452553 <dingchenchen@huawei.com>
+Date: Fri, 11 Jun 2021 11:45:30 +0000
+Subject: [PATCH] Description:add hichain huks cutting features
+
+TicketNo:OR0001ODP1
+Issue:add hichain huks cutting features
+Team: HISI_SWP_System
+Feature or Bugfix:Bugfix
+Test Result:PASS
+Related Commit:No
+Controlled Dir:No
+PrivateCode(Yes/No):No
+Release Verify:NA
+Binary Source:NA
+AR/Design/TestCase Update:NA
+---
+ .../deviceauth/frameworks/deviceauth_lite/source/BUILD.gn      | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/base/security/deviceauth/frameworks/deviceauth_lite/source/BUILD.gn b/base/security/deviceauth/frameworks/deviceauth_lite/source/BUILD.gn
+index 0c9b2bf34..c8b130067 100755
+--- a/base/security/deviceauth/frameworks/deviceauth_lite/source/BUILD.gn
++++ b/base/security/deviceauth/frameworks/deviceauth_lite/source/BUILD.gn
+@@ -81,6 +81,9 @@ config("hichain_config") {
+     "_CUT_REMOVE_",
+     "_CUT_ADD_",
+     "_CUT_LOG_",
++    "_CUT_STS_SERVER_",
++    "_CUT_STS_",
++    "_CUT_EXCHANGE_",
+   ]
+ }
+ 
+-- 
+2.22.0
+

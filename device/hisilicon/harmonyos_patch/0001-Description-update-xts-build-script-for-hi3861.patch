@@ -1,0 +1,54 @@
+From 454cefe98bfbf3e98adcd16c75d69dda4666b6e3 Mon Sep 17 00:00:00 2001
+From: d00452553 <dingchenchen@huawei.com>
+Date: Tue, 29 Jun 2021 19:14:33 +0000
+Subject: [PATCH] Description:update xts build script for hi3861
+
+TicketNo:OR0001ODP1
+Issue:
+Team: HISI_SWP_System
+Feature or Bugfix:Bugfix
+Test Result:PASS
+Related Commit:No
+Controlled Dir:No
+PrivateCode(Yes/No):No
+Release Verify:NA
+Binary Source:NA
+AR/Design/TestCase Update:NA
+---
+ test/xts/tools/lite/build.sh | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/test/xts/tools/lite/build.sh b/test/xts/tools/lite/build.sh
+index 3f4c51903..a9a95c914 100755
+--- a/test/xts/tools/lite/build.sh
++++ b/test/xts/tools/lite/build.sh
+@@ -116,7 +116,7 @@ parse_cmdline()
+ 
+ build()
+ {
+-  out_dir="${BASE_HOME}/out/hispark_pegasus/wifiiot_hispark_pegasus"
++  out_dir="${BASE_HOME}/out/hi3861/hi3861"
+   suite_root_dir="${out_dir}/suites"
+   cd $BASE_HOME
+   if [ "$PRODUCT" = "wifiiot" ]; then
+@@ -150,7 +150,7 @@ build_wifiiot()
+ 	mkdir -p ${DIST_DIR}/json
+     for element in ${array[*]}
+     do
+-      python build.py -p wifiiot_hispark_pegasus@hisilicon -f --test xts ${element}
++      python build.py -p hi3861@hisilicon -f --test xts ${element}
+       suite_build_target=`echo "${element}" | awk -F "[/:]" '{print $NF}'`
+       module_list_file=$suite_out_dir/module_info.json
+       suite_module_name=`python test/xts/tools/lite/build/utils.py --method_name get_modulename_by_buildtarget --arguments module_list_file=${module_list_file}#build_target=${suite_build_target}`
+@@ -159,7 +159,7 @@ build_wifiiot()
+       python test/xts/tools/lite/build/utils.py --method_name record_testmodule_info --arguments build_target_name=${suite_module_name}#module_name=${suite_module_name}#subsystem_name=${subsystem_name}#suite_out_dir=${DIST_DIR}/json#same_file=True
+ 
+       mkdir -p ${suite_out_dir}/${subsystem_name}
+-      cp -f ${BASE_HOME}/out/hispark_pegasus/wifiiot_hispark_pegasus/${WIFIIOT_OUTFILE} ${suite_out_dir}/${subsystem_name}/${suite_module_name}.bin
++      cp -f ${BASE_HOME}/out/hi3861/hi3861/${WIFIIOT_OUTFILE} ${suite_out_dir}/${subsystem_name}/${suite_module_name}.bin
+       rm -f ${suite_out_dir}/${subsystem_name}/*.a
+       cp -rf ${xts_root_dir}  ${DIST_DIR}
+     done
+-- 
+2.22.0
+
